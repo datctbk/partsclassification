@@ -9,7 +9,7 @@ IMAGE_SIZE = (224,224)
 model = load_model('resnet50custom.h5')
 
 def get_predictions(raw_image):
-	img = img.astype("float")
+	img = raw_image.astype("float")
 	img = img[..., ::-1]
 	img = cv2.resize(img, IMAGE_SIZE)
 	img = img_to_array(img)
