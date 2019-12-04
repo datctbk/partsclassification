@@ -10,10 +10,10 @@ model = load_model('resnet50custom.h5')
 
 def get_predictions(raw_image):
 	# load input image and grab its spatial dimensions
-    nparr = np.fromstring(raw_image.data, np.uint8)
-    # decode image
-    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    (H, W) = image.shape[:2]
+	nparr = np.fromstring(raw_image.data, np.uint8)
+	# decode image
+	image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+	(H, W) = image.shape[:2]
 	img = image.astype("float")
 	img = img[..., ::-1]
 	img = cv2.resize(img, IMAGE_SIZE)
