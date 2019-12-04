@@ -36,7 +36,7 @@ def preprocess_image(image, target_size):
 def get_predictions(request):
 	message = request.get_json(force=True)
 	encoded = message['image']
- 	decoded = base64.b64decode(encoded)
+	decoded = base64.b64decode(encoded)
 	image = Image.open(io.BytesIO(decoded))
 	processed_image = preprocess_image(image, target_size=(224, 224))
 	prediction = model.predict(processed_image).tolist()
