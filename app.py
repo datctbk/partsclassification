@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from yolo import get_predictions
+from utils import get_predictions
 
 
 app = Flask(__name__)
