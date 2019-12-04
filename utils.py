@@ -9,7 +9,12 @@ IMAGE_SIZE = (224,224)
 model = load_model('resnet50custom.h5')
 
 def get_predictions(raw_image):
-	img = raw_image.astype("float")
+	# load input image and grab its spatial dimensions
+    nparr = np.fromstring(raw_image.data, np.uint8)
+    # decode image
+    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    (H, W) = image.shape[:2]
+	img = image.astype("float")
 	img = img[..., ::-1]
 	img = cv2.resize(img, IMAGE_SIZE)
 	img = img_to_array(img)
