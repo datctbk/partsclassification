@@ -40,10 +40,12 @@ def get_predictions(request):
 	image = Image.open(io.BytesIO(decoded))
 	processed_image = preprocess_image(image, target_size=(224, 224))
 	prediction = model.predict(processed_image).tolist()
+	print('prediction',prediction)
 	response = {
 		'prediction': {
 			'broken': prediction[0][0],
 			'good': prediction[0][1]
 		}
 	}
+	print ('response',response)
 	return response
