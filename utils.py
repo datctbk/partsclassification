@@ -3,7 +3,7 @@ import time
 import urllib
 import numpy as np
 import cv2
-
+from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 IMAGE_SIZE = (224,224)
 model = load_model('resnet50custom.h5')
