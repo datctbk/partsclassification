@@ -20,5 +20,5 @@ def get_predictions(raw_image):
 	img = img_to_array(img)
 	img = np.expand_dims(img, axis=0)
 	proba = model.predict(img)
-	predictions = path,proba[0]
+	predictions = proba[0]
 	return predictions
