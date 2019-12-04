@@ -46,4 +46,4 @@ def get_predictions(request):
 			'good': prediction[0][1]
 		}
 	}
-    return jsonify(response)
+	return jsonify(response)
