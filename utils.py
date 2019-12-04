@@ -27,7 +27,7 @@ def get_predictions(raw_image):
 	return predictions
 '''
 def preprocess_image(image, target_size):
-	
+
 	image = image.resize(target_size)
 	image = img_to_array(image)
 	image = np.expand_dims(image, axis=0)
@@ -46,4 +46,4 @@ def get_predictions(request):
 			'good': prediction[0][1]
 		}
 	}
-	return jsonify(response)
+	return response
