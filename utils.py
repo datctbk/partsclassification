@@ -28,11 +28,10 @@ def get_predictions(raw_image):
 def preprocess_image(image, target_size):
 	image = image.astype("float")
 	image = image[..., ::-1]
-    image = image.resize(target_size)
-    image = img_to_array(image)
-    image = np.expand_dims(image, axis=0)
-
-    return image
+	image = image.resize(target_size)
+	image = img_to_array(image)
+	image = np.expand_dims(image, axis=0)
+	return image
 
 def get_predictions(request):
 	message = request.get_json(force=True)
