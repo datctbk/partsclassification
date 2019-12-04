@@ -27,6 +27,7 @@ def get_predictions(raw_image):
 	return predictions
 '''
 def preprocess_image(image, target_size):
+	image = np.asanyarray(image)
 	image = image.astype("float")
 	image = image[..., ::-1]
 	image = image.resize(target_size)
